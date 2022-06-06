@@ -1,0 +1,13 @@
+apiVersion: kpack.io/v1alpha2
+kind: ClusterStore
+metadata:
+  name: python-store
+  namespace: kpack
+spec:
+  sources:
+  - image: gcr.io/paketo-buildpacks/cpython
+  - image: gcr.io/paketo-buildpacks/pip-install
+  - image: gcr.io/paketo-buildpacks/python-start
+  - image: gcr.io/paketo-buildpacks/pip
+  - image: gcr.io/paketo-buildpacks/procfile
+  - image: gcr.io/paketo-buildpacks/ca-certificates

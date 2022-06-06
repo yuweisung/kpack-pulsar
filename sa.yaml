@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: kpack-sa
+  namespace: kpack
+secrets:
+  - name: my-dockerhub
+imagePullSecrets:
+  - name: my-dockerhub

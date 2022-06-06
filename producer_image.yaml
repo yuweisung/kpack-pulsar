@@ -1,0 +1,16 @@
+apiVersion: kpack.io/v1alpha2
+kind: Image
+metadata:
+  name: pulsar-producer-image
+  namespace: kpack
+spec:
+  tag: index.docker.io/yuwsung1/pulsar-python-producer 
+  serviceAccountName: kpack-sa
+  builder:
+    name: python-builder
+    kind: Builder
+  source:
+    git:
+      url: https://github.com/yuweisung/pulsar-python
+      revision: kpack
+    subPath: "producer-bp"

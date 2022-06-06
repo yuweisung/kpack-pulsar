@@ -1,0 +1,22 @@
+apiVersion: kpack.io/v1alpha2
+kind: Builder
+metadata:
+  name: python-builder
+  namespace: kpack
+spec:
+  serviceAccount: kpack-sa
+  tag: index.docker.io/yuwsung1/pulsar-python-producer
+  stack:
+    name: python-stack
+    kind: ClusterStack
+  store:
+    name: python-store
+    kind: ClusterStore
+  order:
+  - group:
+    - id: paketo-buildpacks/ca-certificates
+    - id: paketo-buildpacks/cpython
+    - id: paketo-buildpacks/pip
+    - id: paketo-buildpacks/pip-install
+    - id: paketo-buildpacks/python-start
+    - id: paketo-buildpacks/procfile 
